@@ -12,5 +12,3 @@ colors do update in real game time
 toggles not working on real time
 
 opacity not working at all
-
-copyright use - creative commons
