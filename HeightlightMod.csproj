@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build"
+         xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- ================= BASIC SETTINGS ================= -->
+
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+
+    <OutputType>Library</OutputType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+
+    <RootNamespace>HighlightMod</RootNamespace>
+    <AssemblyName>HighlightCategories</AssemblyName>
+
+    <LangVersion>7.3</LangVersion>
+    <Nullable>disable</Nullable>
+
+    <!-- ================= replace with your subnautica game folder ================= -->
+    <SubnauticaDir>D:\Games\Subnautica</SubnauticaDir>
+  </PropertyGroup>
+
+  <!-- ================= BUILD OUTPUT ================= -->
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <BaseOutputPath>bin\</BaseOutputPath>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <BaseOutputPath>bin\</BaseOutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+
+  <!-- ================= REFERENCES ================= -->
+
+  <ItemGroup>
+    <Reference Include="BepInEx">
+      <HintPath>$(SubnauticaDir)\BepInEx\core\BepInEx.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="0Harmony">
+      <HintPath>$(SubnauticaDir)\BepInEx\core\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="Nautilus">
+      <HintPath>$(SubnauticaDir)\BepInEx\plugins\Nautilus\Nautilus.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(SubnauticaDir)\Subnautica_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>$(SubnauticaDir)\Subnautica_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="UnityEngine">
+      <HintPath>$(SubnauticaDir)\Subnautica_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(SubnauticaDir)\Subnautica_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="UnityEngine.UI">
+      <HintPath>$(SubnauticaDir)\Subnautica_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>$(SubnauticaDir)\Subnautica_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>$(SubnauticaDir)\Subnautica_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>$(SubnauticaDir)\Subnautica_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- ================= SOURCE FILES ================= -->
+
+  <ItemGroup>
+    <Compile Include="Plugin.cs" />
+    <Compile Include="HighlightCategory.cs" />
+    <Compile Include="HighlightScanner.cs" />
+    <Compile Include="ObjectHighlighterLight.cs" />
+    <Compile Include="StaticCategoryOutline.cs" />
+
+    <Compile Include="HighlightMod\HighlightOptions.cs" />
+    <Compile Include="HighlightMod\HighlightConfig.cs" />
+    <Compile Include="HighlightMod\HighlightResolver.cs" />
+    <Compile Include="HighlightMod\HighlightUtility.cs" />
+    <Compile Include="HighlightMod\Manager\HighlightManager.cs" />
+    <Compile Include="HighlightMod\ScannableHighlighterPatch.cs" />
+  </ItemGroup>
+
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
+</Project>

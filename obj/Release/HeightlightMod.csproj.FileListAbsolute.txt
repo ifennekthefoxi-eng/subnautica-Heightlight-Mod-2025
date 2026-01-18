@@ -1,0 +1,4 @@
+D:\Downloads\HeightlightMod2025fix\HeightlightMod\obj\Release\HeightlightMod.csproj.AssemblyReference.cache
+D:\Downloads\HeightlightMod2025fix\HeightlightMod\obj\Release\HeightlightMod.csproj.CoreCompileInputs.cache
+D:\Downloads\HeightlightMod2025fix\HeightlightMod\bin\Release\HighlightCategories.dll
+D:\Downloads\HeightlightMod2025fix\HeightlightMod\obj\Release\HighlightCategories.dll
