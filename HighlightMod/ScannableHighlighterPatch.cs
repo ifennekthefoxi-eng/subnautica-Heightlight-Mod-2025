@@ -128,7 +128,6 @@ namespace HighlightMod
 
 			HighlightCategory category = GetCategory(go);
 
-			// ❗ If category disabled or invalid → CLEAR
 			if (category == HighlightCategory.None)
 			{
 				ClearHighlight(go);
@@ -137,7 +136,6 @@ namespace HighlightMod
 
 			Color? color = GetColorForCategory(category);
 
-			// ❗ Toggle OFF → CLEAR
 			if (color == null)
 			{
 				ClearHighlight(go);
@@ -238,3 +236,4 @@ namespace HighlightMod
 		private const float OutlineWidth = 0.035f;
 	}
 }
+
